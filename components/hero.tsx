@@ -57,13 +57,6 @@ function PhoneHero({ stats }: { stats: HeroStat[] }) {
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-bg/70 via-transparent to-bg" />
         <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bg to-transparent" />
-        <p className="fade-up absolute left-5 top-20 inline-flex items-center gap-2 border border-line bg-bg/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-fg backdrop-blur" style={delay(200)}>
-          <span className="pulse-dot size-1.5 rounded-full bg-accent" aria-hidden />
-          Researching · Chennai ·{" "}
-          <span className="text-muted">
-            <LocalClock timeZone={profile.timeZone} suffix="IST" />
-          </span>
-        </p>
       </div>
 
       <div className="container-x relative -mt-16 pb-8">
@@ -182,7 +175,7 @@ export function Hero({ stats }: { stats: HeroStat[] }) {
               unoptimized
               className="size-14 border border-line object-cover lg:hidden"
             />
-            <div className="label flex flex-wrap items-center gap-x-6 gap-y-1.5">
+            <div className="label flex flex-wrap items-center gap-x-6 gap-y-1.5 max-lg:hidden">
               <span className="flex items-center gap-2.5 text-fg">
                 <span className="pulse-dot size-1.5 rounded-full bg-accent" aria-hidden />
                 Status: researching
