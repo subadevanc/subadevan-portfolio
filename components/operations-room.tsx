@@ -54,7 +54,7 @@ export function OperationsRoom() {
   return (
     <section id="operations" aria-labelledby="operations-title" className="relative border-y border-line bg-surface">
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40 [background-image:radial-gradient(#262B33_1px,transparent_1px)] [background-size:22px_22px]" />
-      <div className="container-x relative py-24 md:py-32">
+      <div className="container-x relative py-24 max-md:py-16 md:py-32">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-8">
             <div>

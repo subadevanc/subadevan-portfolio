@@ -18,7 +18,7 @@ export function Community() {
   ];
 
   return (
-    <section id="community" aria-labelledby="community-title" className="py-28 md:py-40">
+    <section id="community" aria-labelledby="community-title" className="py-28 max-md:py-20 md:py-40">
       <div className="container-x">
         <SectionHeading
           id="community"
@@ -33,7 +33,7 @@ export function Community() {
 
         {/* Flaggers United */}
         <div className="mt-20 grid gap-12 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
+          <Reveal className="max-md:min-w-0 lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <div className="flex items-center gap-4">
                 <Image src="/ctftime/team-logo.png" alt="" width={64} height={64} className="size-16 border border-line" />
@@ -44,7 +44,7 @@ export function Community() {
                   </p>
                 </div>
               </div>
-              <p className="mt-8 text-lg leading-relaxed text-muted">{flaggersUnited.summary}</p>
+              <p className="mt-8 text-lg leading-relaxed text-muted max-md:mt-5 max-md:text-base">{flaggersUnited.summary}</p>
               <dl className="mt-8 grid grid-cols-2 gap-px border border-line bg-line">
                 {facts.map((f) => (
                   <div key={f.label} className="flex flex-col gap-1 bg-bg p-4">
@@ -56,17 +56,17 @@ export function Community() {
             </div>
           </Reveal>
 
-          <div className="lg:col-span-7">
+          <div className="max-md:min-w-0 lg:col-span-7">
             <h3 className="label">Winning events as a team <span className="normal-case tracking-normal">(photos in the competition section above)</span></h3>
             <ol className="mt-4 border-t border-line">
               {teamWins.map((c) => (
                 <li key={c.event}>
                   <Reveal>
-                    <article className="grid grid-cols-[4.5rem_1fr] items-center gap-5 border-b border-line py-5">
-                      <p className={`font-display text-3xl font-semibold tracking-tight ${c.place === 1 ? "text-accent" : ""}`}>{c.result}</p>
-                      <div>
-                        <p className="text-lg font-medium leading-snug">{c.event}</p>
-                        <p className="mt-1 text-sm text-muted">{[c.host, c.date].filter(Boolean).join(" · ")}</p>
+                    <article className="grid grid-cols-[4.5rem_1fr] items-center gap-5 border-b border-line py-5 max-md:grid-cols-[3.25rem_1fr] max-md:gap-3 max-md:py-3">
+                      <p className={`font-display text-3xl font-semibold tracking-tight max-md:text-2xl ${c.place === 1 ? "text-accent" : ""}`}>{c.result}</p>
+                      <div className="max-md:min-w-0">
+                        <p className="text-lg font-medium leading-snug max-md:text-[15px]">{c.event}</p>
+                        <p className="mt-1 text-sm text-muted max-md:truncate max-md:text-xs">{[c.host, c.date].filter(Boolean).join(" · ")}</p>
                         {c.prize && <p className="mt-1 font-mono text-xs text-accent">{c.prize}</p>}
                       </div>
                     </article>

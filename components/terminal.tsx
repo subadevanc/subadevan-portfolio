@@ -252,10 +252,11 @@ export function Terminal({ open, onOpen, onClose }: { open: boolean; onOpen: () 
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0, transition: { delay: 1.6 } }}
             exit={{ opacity: 0, y: 12 }}
-            className="fixed bottom-4 right-4 z-40 inline-flex h-11 items-center gap-2 border border-line bg-surface/90 px-4 font-mono text-xs text-muted backdrop-blur transition-colors hover:border-term hover:text-term"
+            aria-label="Open terminal"
+            className="fixed bottom-4 right-4 z-40 inline-flex h-11 items-center gap-2 border border-line bg-surface/90 px-4 font-mono text-xs text-muted backdrop-blur transition-colors hover:border-term hover:text-term max-md:bottom-3 max-md:right-3 max-md:w-11 max-md:justify-center max-md:px-0"
           >
             <SquareTerminal className="size-4" aria-hidden />
-            terminal
+            <span className="max-md:hidden">terminal</span>
           </motion.button>
         )}
       </AnimatePresence>

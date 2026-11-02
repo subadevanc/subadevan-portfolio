@@ -25,7 +25,7 @@ export function Contact() {
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="grid-bg opacity-70" />
       </div>
-      <div className="container-x py-28 md:py-40">
+      <div className="container-x py-28 max-md:py-20 md:py-40">
         <Reveal>
           <p className="label flex items-center gap-3">
             <span className="text-accent">§{sectionIndex("contact")}</span>

@@ -27,7 +27,7 @@ const FILE: [string, string][] = [
 
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="container-x py-28 md:py-40">
+    <section id="about" aria-labelledby="about-title" className="container-x py-28 max-md:py-20 md:py-40">
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <SectionHeading id="about" kicker="About" title={<>Beyond the terminal.</>} />
@@ -51,7 +51,7 @@ export function About() {
                   </dd>
                 </div>
               </dl>
-              <div className="mt-6 text-muted">
+              <div className="mt-6 text-muted max-md:hidden">
                 <Barcode seed="SUBADEVAN-C" />
               </div>
             </figure>
@@ -60,14 +60,14 @@ export function About() {
 
         <div className="lg:col-span-7 lg:pt-36">
           <Reveal>
-            <p className="font-display text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.2] tracking-[-0.02em]">
+            <p className="font-display text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.2] tracking-[-0.02em] max-md:text-xl max-md:leading-snug">
               I&rsquo;m a final-year Computer Science and Engineering (Cybersecurity) student in Chennai, and I spend most
               of my time on the offensive side of security: finding the assumptions an application makes, and{" "}
               <span className="text-accent">testing whether they hold.</span>
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-8 text-lg leading-relaxed text-muted md:grid-cols-2">
+          <div className="mt-12 grid gap-8 text-lg leading-relaxed text-muted max-md:mt-8 max-md:gap-5 max-md:text-base md:grid-cols-2">
             <Reveal delay={0.05}>
               <p>
                 <span className="text-fg">It started with CTFs.</span> In 2024 I co-founded Flaggers United, a CTF team

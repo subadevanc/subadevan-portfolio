@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Plus } from "lucide-react";
+import { ChevronDown, Plus } from "lucide-react";
 import { caseStudies, disclosures, experience, type CaseStudy } from "@/data/research";
 import { PhotoFigure } from "./photo";
 import { useHashOpen } from "@/lib/use-hash-open";
@@ -25,16 +25,26 @@ function RedactedPoc() {
   );
 }
 
-function CaseFields({ c }: { c: CaseStudy }) {
+function CaseFields({ c, phoneCollapsed = false }: { c: CaseStudy; phoneCollapsed?: boolean }) {
+  const more = phoneCollapsed ? "max-md:hidden" : "";
   return (
     <div className="space-y-8">
       <Pipeline stage={c.stage} />
       <div className="grid gap-x-10 gap-y-7 md:grid-cols-2">
         <Field label="Technical overview">{c.overview}</Field>
-        <Field label="Root cause">{c.rootCause}</Field>
-        <Field label="Security implications">{c.implications}</Field>
-        <Field label="Disclosure process">{c.disclosure}</Field>
-        <Field label="Resolution">{c.resolution}</Field>
+        <div className={more}>
+          <Field label="Root cause">{c.rootCause}</Field>
+        </div>
+        <div className={more}>
+          <Field label="Security implications">{c.implications}</Field>
+        </div>
+        <div className={more}>
+          <Field label="Disclosure process">{c.disclosure}</Field>
+        </div>
+        <div className={more}>
+          <Field label="Resolution">{c.resolution}</Field>
+        </div>
+        <div className={more}>
         <Field label="Evidence">
           {c.evidence.length > 0 ? (
             <ul className="space-y-1">
@@ -50,15 +60,18 @@ function CaseFields({ c }: { c: CaseStudy }) {
             <span className="text-muted">{c.photos?.length ? "Screenshots below." : "Private report. No public evidence link."}</span>
           )}
         </Field>
+        </div>
       </div>
       {c.photos && (
-        <div className="grid gap-2 sm:grid-cols-2">
+        <div className={`grid gap-2 sm:grid-cols-2 ${more}`}>
           {c.photos.map((ph) => (
             <PhotoFigure key={ph.src} photo={ph} caption sizes="(min-width: 640px) 30vw, 100vw" />
           ))}
         </div>
       )}
-      <RedactedPoc />
+      <div className={more}>
+        <RedactedPoc />
+      </div>
     </div>
   );
 }
@@ -90,10 +103,11 @@ export function ResearchLab() {
   const featured = caseStudies.find((c) => c.featured)!;
   const rest = caseStudies.filter((c) => !c.featured);
   const [open, setOpen] = useState<string | null>(null);
+  const [featuredOpen, setFeaturedOpen] = useState(false);
   useHashOpen("case-", rest.map((c) => c.id), setOpen);
 
   return (
-    <section id="research" aria-labelledby="research-title" className="container-x py-28 md:py-40">
+    <section id="research" aria-labelledby="research-title" className="container-x py-28 max-md:py-20 md:py-40">
       <SectionHeading
         id="research"
         kicker="Security research"
@@ -123,7 +137,16 @@ export function ResearchLab() {
             <h3 id="case-vercel-title" className="mb-8 text-3xl font-semibold tracking-tight md:text-4xl">
               {featured.title}
             </h3>
-            <CaseFields c={featured} />
+            <CaseFields c={featured} phoneCollapsed={!featuredOpen} />
+            <button
+              type="button"
+              onClick={() => setFeaturedOpen((v) => !v)}
+              aria-expanded={featuredOpen}
+              className="label mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 border border-line text-fg md:hidden"
+            >
+              {featuredOpen ? "Show less" : "Read full case file"}
+              <ChevronDown className={`size-4 transition-transform ${featuredOpen ? "rotate-180" : ""}`} aria-hidden />
+            </button>
           </div>
         </article>
       </Reveal>

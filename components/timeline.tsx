@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Plus } from "lucide-react";
+import { ChevronDown, Plus } from "lucide-react";
 import { milestones, TIMELINE_FILTERS, type TimelineCategory } from "@/data/timeline";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./ui";
@@ -18,12 +18,13 @@ const CATEGORY_LABEL: Record<TimelineCategory, string> = {
 export function Timeline() {
   const [filter, setFilter] = useState<TimelineCategory | "all">("all");
   const [open, setOpen] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const items = [...milestones]
     .sort((a, b) => a.sort.localeCompare(b.sort))
     .filter((m) => filter === "all" || m.category === filter);
 
   return (
-    <section id="timeline" aria-labelledby="timeline-title" className="container-x py-28 md:py-40">
+    <section id="timeline" aria-labelledby="timeline-title" className="container-x py-28 max-md:py-20 md:py-40">
       <div className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
@@ -59,9 +60,10 @@ export function Timeline() {
           </div>
         </div>
 
-        <ol className="lg:col-span-8 lg:pt-4">
+        <div className="lg:col-span-8">
+        <ol id="timeline-list" className="lg:pt-4">
           <AnimatePresence initial={false} mode="popLayout">
-            {items.map((m) => {
+            {items.map((m, idx) => {
               const key = `${m.sort}-${m.title}`;
               const isOpen = open === key;
               return (
@@ -72,7 +74,7 @@ export function Timeline() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="grid grid-cols-[1fr] sm:grid-cols-[8rem_1fr]"
+                  className={`grid grid-cols-[1fr] sm:grid-cols-[8rem_1fr] ${!showAll && idx >= 10 ? "max-md:hidden" : ""}`}
                 >
                   <p className="label pt-6 sm:pr-6 sm:text-right">{m.when}</p>
                   <div className="relative border-l border-line pb-1 pl-7">
@@ -122,6 +124,19 @@ export function Timeline() {
             })}
           </AnimatePresence>
         </ol>
+        {items.length > 10 && (
+          <button
+            type="button"
+            onClick={() => setShowAll((v) => !v)}
+            aria-expanded={showAll}
+            aria-controls="timeline-list"
+            className="label mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 border border-line text-fg md:hidden"
+          >
+            {showAll ? "Show fewer" : `Show all ${items.length} milestones`}
+            <ChevronDown className={`size-4 transition-transform ${showAll ? "rotate-180" : ""}`} aria-hidden />
+          </button>
+        )}
+        </div>
       </div>
     </section>
   );
