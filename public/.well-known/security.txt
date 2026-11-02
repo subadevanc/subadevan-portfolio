@@ -1,3 +1,4 @@
 Contact: mailto:subadevanc@gmail.com
 Expires: 2027-11-01T00:00:00.000Z
 Preferred-Languages: en, ta
+Canonical: https://subadevan.tech/.well-known/security.txt

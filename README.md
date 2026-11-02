@@ -1,5 +1,7 @@
 # Subadevan C — portfolio
 
+Live at **https://subadevan.tech**
+
 Next.js 16 · TypeScript · Tailwind CSS 4 · Motion. Fully static.
 
 ```bash
