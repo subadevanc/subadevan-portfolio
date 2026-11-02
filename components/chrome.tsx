@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { MotionConfig } from "motion/react";
 import { Nav } from "./nav";
+import { ScrollPipeline } from "./scroll-pipeline";
 import { CommandPalette } from "./command-palette";
 import { Terminal } from "./terminal";
 
@@ -41,6 +42,7 @@ export function Chrome({ children }: { children: ReactNode }) {
   return (
     <ChromeContext.Provider value={{ openPalette, openTerminal }}>
       <MotionConfig reducedMotion="user">
+        <ScrollPipeline />
         <Nav />
         {children}
         <CommandPalette

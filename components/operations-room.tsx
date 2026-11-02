@@ -6,6 +6,7 @@ import ctftime from "@/data/ctftime.json";
 import roster from "@/data/roster.json";
 import { safeUrl } from "@/lib/safe-url";
 import { sectionIndex } from "@/lib/site";
+import { Decrypt } from "./decrypt";
 import { PlacementChart, type ChartEvent } from "./placement-chart";
 import { Reveal } from "./reveal";
 import { ExternalLink } from "./ui";
@@ -64,9 +65,11 @@ export function OperationsRoom() {
                 Competitive intelligence · {ctftime.team.name}
               </p>
               <h2 id="operations-title" className="mt-5 text-[clamp(2.5rem,6.4vw,6rem)] font-semibold uppercase leading-[0.92] tracking-[-0.04em]">
-                The Operations
-                <br />
-                Room<span className="text-accent">.</span>
+                <Decrypt>
+                  The Operations
+                  <br />
+                  Room<span className="text-accent">.</span>
+                </Decrypt>
               </h2>
             </div>
             <div className="font-mono text-xs leading-relaxed text-muted sm:text-right">

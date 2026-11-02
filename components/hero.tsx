@@ -4,6 +4,8 @@ import { useRef, type CSSProperties, type PointerEvent } from "react";
 import Image from "next/image";
 import { ArrowDown, FileDown } from "lucide-react";
 import { profile, socials } from "@/data/profile";
+import { AttackSurface } from "./attack-surface";
+import { CountUp } from "./count-up";
 import { LocalClock } from "./local-clock";
 import { ExternalLink } from "./ui";
 
@@ -127,7 +129,9 @@ function PhoneHero({ stats }: { stats: HeroStat[] }) {
         {stats.map((s) => (
           <div key={s.label} className="flex min-w-[44%] snap-start flex-col gap-1 border border-line bg-surface/80 p-4">
             <dt className="label text-[10px]">{s.label}</dt>
-            <dd className="order-first font-display text-3xl font-medium tracking-tight">{s.value}</dd>
+            <dd className="order-first font-display text-3xl font-medium tracking-tight">
+              <CountUp value={s.value} delay={1500} duration={1800} />
+            </dd>
             <dd className="font-mono text-[11px] leading-snug text-muted">{s.detail}</dd>
           </div>
         ))}
@@ -157,6 +161,7 @@ export function Hero({ stats }: { stats: HeroStat[] }) {
       className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-16 max-md:pt-0"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <AttackSurface className="max-md:hidden [mask-image:linear-gradient(to_right,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.6)_35%,#000_70%)]" />
         <div className="grid-bg" />
         <div className="grid-spot" />
       </div>
@@ -270,7 +275,9 @@ export function Hero({ stats }: { stats: HeroStat[] }) {
               } ${i >= 2 ? "border-t border-line md:border-t-0" : ""}`}
             >
               <dt className="label text-[11px]">{s.label}</dt>
-              <dd className="order-first font-display text-4xl font-medium tracking-tight md:text-5xl">{s.value}</dd>
+              <dd className="order-first font-display text-4xl font-medium tracking-tight md:text-5xl">
+                <CountUp value={s.value} delay={1700} duration={1800} />
+              </dd>
               <dd className="font-mono text-xs text-muted">{s.detail}</dd>
             </div>
           ))}

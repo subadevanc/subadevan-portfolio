@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { isExternal, safeUrl } from "@/lib/safe-url";
 import { sectionIndex, type SectionId } from "@/lib/site";
+import { Decrypt } from "./decrypt";
+import { RedactReveal } from "./redact-reveal";
 import { Reveal } from "./reveal";
 
 export function SectionHeading({
@@ -26,7 +28,7 @@ export function SectionHeading({
         id={`${id}-title`}
         className="mt-5 text-[clamp(2.5rem,6.4vw,6rem)] font-semibold leading-[0.92] tracking-[-0.04em]"
       >
-        {title}
+        <Decrypt>{title}</Decrypt>
       </h2>
       {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{intro}</p>}
     </Reveal>
@@ -79,7 +81,9 @@ export function Field({ label, children }: { label: string; children: ReactNode 
   return (
     <div>
       <h4 className="label text-[11px]">{label}</h4>
-      <div className="mt-2 leading-relaxed text-fg/90">{children}</div>
+      <div className="mt-2 leading-relaxed text-fg/90">
+        <RedactReveal>{children}</RedactReveal>
+      </div>
     </div>
   );
 }

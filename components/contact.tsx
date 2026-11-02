@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { profile, socials } from "@/data/profile";
 import { sectionIndex } from "@/lib/site";
+import { Decrypt } from "./decrypt";
 import { Reveal } from "./reveal";
 import { ExternalLink } from "./ui";
 
@@ -36,7 +37,9 @@ export function Contact() {
             id="contact-title"
             className="mt-6 max-w-6xl text-[clamp(2.75rem,8.5vw,8.5rem)] font-semibold leading-[0.9] tracking-[-0.05em]"
           >
-            Have something interesting to secure<span className="text-accent">?</span>
+            <Decrypt>
+              Have something interesting to secure<span className="text-accent">?</span>
+            </Decrypt>
           </h2>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
             I&rsquo;m open to security research collaborations, VAPT work and conversations about offensive security roles.
