@@ -1,0 +1,20 @@
+{
+  "source": "https://ctftime.org/team/356365",
+  "snapshotDate": "2026-11-02",
+  "note": "Public members listed on the CTFtime team page. Update by hand; do not scrape on build.",
+  "members": [
+    { "handle": "subadevanc", "url": "https://ctftime.org/user/186248" },
+    { "handle": "balachanderkishore", "url": "https://ctftime.org/user/207066" },
+    { "handle": "de3ter", "url": "https://ctftime.org/user/207068" },
+    { "handle": "0xN1rm4l", "url": "https://ctftime.org/user/241270" },
+    { "handle": "thiruselvamd586", "url": "https://ctftime.org/user/253599" },
+    { "handle": "Aizen07", "url": "https://ctftime.org/user/261764" },
+    { "handle": "vbmanoj62", "url": "https://ctftime.org/user/270485" },
+    { "handle": "yashberzerk", "url": "https://ctftime.org/user/270573" },
+    { "handle": "0xr0h4n", "url": "https://ctftime.org/user/271781" },
+    { "handle": "ArtOfWar", "url": "https://ctftime.org/user/271790" },
+    { "handle": "Et3rN4LSK13", "url": "https://ctftime.org/user/271796" },
+    { "handle": "cod3z3r0.pv", "url": "https://ctftime.org/user/272438" },
+    { "handle": "imshachindra", "url": "https://ctftime.org/user/272638" }
+  ]
+}

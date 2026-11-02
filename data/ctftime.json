@@ -1,0 +1,407 @@
+{
+  "source": "https://ctftime.org/team/356365",
+  "fetchedAt": "2026-11-02T13:29:41.064Z",
+  "team": {
+    "id": 356365,
+    "name": "Flaggers United",
+    "country": "IN",
+    "university": "Jerusalem College of Engineering, Chennai",
+    "academic": true,
+    "aliases": [
+      "Son Of Thanjai",
+      "0xZenith",
+      "0xFlagger",
+      "0xFlaggersUnited"
+    ]
+  },
+  "rating": [
+    {
+      "year": 2026,
+      "ratingPlace": 319,
+      "countryPlace": 32,
+      "points": 214.54
+    }
+  ],
+  "events": [
+    {
+      "id": 3207,
+      "title": "Hack.lu CTF 2026",
+      "year": 2026,
+      "date": "2026-10-23",
+      "place": 84,
+      "totalTeams": 278,
+      "points": 1200,
+      "url": "https://ctftime.org/event/3207"
+    },
+    {
+      "id": 3369,
+      "title": "cruXipher 2026 - ATMoS '26, BITS Hyderabad",
+      "year": 2026,
+      "date": "2026-10-23",
+      "place": 141,
+      "totalTeams": 389,
+      "points": 700,
+      "url": "https://ctftime.org/event/3369"
+    },
+    {
+      "id": 3279,
+      "title": "DEADFACE CTF 2026",
+      "year": 2026,
+      "date": "2026-10-17",
+      "place": 102,
+      "totalTeams": 989,
+      "points": 7317,
+      "url": "https://ctftime.org/event/3279"
+    },
+    {
+      "id": 3434,
+      "title": "CSS CTF 2026: Return of Nexus",
+      "year": 2026,
+      "date": "2026-09-30",
+      "place": 464,
+      "totalTeams": 799,
+      "points": 266,
+      "url": "https://ctftime.org/event/3434"
+    },
+    {
+      "id": 3093,
+      "title": "H7CTF 2026 Quals",
+      "year": 2026,
+      "date": "2026-09-26",
+      "place": 79,
+      "totalTeams": 722,
+      "points": 6468,
+      "url": "https://ctftime.org/event/3093"
+    },
+    {
+      "id": 3399,
+      "title": "SunshineCTF 2026",
+      "year": 2026,
+      "date": "2026-09-26",
+      "place": 179,
+      "totalTeams": 758,
+      "points": 6969,
+      "url": "https://ctftime.org/event/3399"
+    },
+    {
+      "id": 3435,
+      "title": "LUN4R CTF Quals",
+      "year": 2026,
+      "date": "2026-09-20",
+      "place": 50,
+      "totalTeams": 325,
+      "points": 2399,
+      "url": "https://ctftime.org/event/3435"
+    },
+    {
+      "id": 3346,
+      "title": "NullOrigin CTF Qualifiers",
+      "year": 2026,
+      "date": "2026-09-18",
+      "place": 153,
+      "totalTeams": 987,
+      "points": 3960,
+      "url": "https://ctftime.org/event/3346"
+    },
+    {
+      "id": 3159,
+      "title": "PwnSec CTF 2026",
+      "year": 2026,
+      "date": "2026-09-12",
+      "place": 387,
+      "totalTeams": 521,
+      "points": 178,
+      "url": "https://ctftime.org/event/3159"
+    },
+    {
+      "id": 3145,
+      "title": "K17 CTF 2026",
+      "year": 2026,
+      "date": "2026-09-11",
+      "place": 206,
+      "totalTeams": 930,
+      "points": 2100,
+      "url": "https://ctftime.org/event/3145"
+    },
+    {
+      "id": 3344,
+      "title": "TFC CTF 2026",
+      "year": 2026,
+      "date": "2026-09-05",
+      "place": 148,
+      "totalTeams": 504,
+      "points": 1257,
+      "url": "https://ctftime.org/event/3344"
+    },
+    {
+      "id": 3033,
+      "title": "ASIS CTF Quals 2026",
+      "year": 2026,
+      "date": "2026-08-29",
+      "place": 294,
+      "totalTeams": 608,
+      "points": 137,
+      "url": "https://ctftime.org/event/3033"
+    },
+    {
+      "id": 3290,
+      "title": "COMPFEST CTF 2026",
+      "year": 2026,
+      "date": "2026-08-29",
+      "place": 100,
+      "totalTeams": 497,
+      "points": 810,
+      "url": "https://ctftime.org/event/3290"
+    },
+    {
+      "id": 3065,
+      "title": "BrunnerCTF 2026",
+      "year": 2026,
+      "date": "2026-08-21",
+      "place": 147,
+      "totalTeams": 1102,
+      "points": 4160,
+      "url": "https://ctftime.org/event/3065"
+    },
+    {
+      "id": 3370,
+      "title": "z0d1ak CTF Qualifiers",
+      "year": 2026,
+      "date": "2026-08-21",
+      "place": 117,
+      "totalTeams": 420,
+      "points": 1224,
+      "url": "https://ctftime.org/event/3370"
+    },
+    {
+      "id": 3387,
+      "title": "0xV01D CTF 2026 V2",
+      "year": 2026,
+      "date": "2026-08-15",
+      "place": 40,
+      "totalTeams": 451,
+      "points": 9595,
+      "url": "https://ctftime.org/event/3387"
+    },
+    {
+      "id": 3328,
+      "title": "Kali Team - CTF 26",
+      "year": 2026,
+      "date": "2026-08-05",
+      "place": 438,
+      "totalTeams": 645,
+      "points": 250,
+      "url": "https://ctftime.org/event/3328"
+    },
+    {
+      "id": 3136,
+      "title": "SecLeaf Q2 CTF 2026",
+      "year": 2026,
+      "date": "2026-05-23",
+      "place": 444,
+      "totalTeams": 768,
+      "points": 1854,
+      "url": "https://ctftime.org/event/3136"
+    },
+    {
+      "id": 3096,
+      "title": "RITSEC CTF 2026",
+      "year": 2026,
+      "date": "2026-04-03",
+      "place": 408,
+      "totalTeams": 663,
+      "points": 30,
+      "url": "https://ctftime.org/event/3096"
+    },
+    {
+      "id": 3171,
+      "title": "ApoorvCTF 2026",
+      "year": 2026,
+      "date": "2026-03-06",
+      "place": 571,
+      "totalTeams": 848,
+      "points": 100,
+      "url": "https://ctftime.org/event/3171"
+    },
+    {
+      "id": 3185,
+      "title": "CryptoNite CTF 2026",
+      "year": 2026,
+      "date": "2026-03-06",
+      "place": 123,
+      "totalTeams": 382,
+      "points": 1786,
+      "url": "https://ctftime.org/event/3185"
+    },
+    {
+      "id": 2613,
+      "title": "ASIS CTF Finals 2025",
+      "year": 2025,
+      "date": "2025-12-27",
+      "place": 419,
+      "totalTeams": 476,
+      "points": 25,
+      "url": "https://ctftime.org/event/2613"
+    },
+    {
+      "id": 2844,
+      "title": "AmateursCTF 2025",
+      "year": 2025,
+      "date": "2025-11-14",
+      "place": 536,
+      "totalTeams": 849,
+      "points": 10,
+      "url": "https://ctftime.org/event/2844"
+    },
+    {
+      "id": 2883,
+      "title": "BuckeyeCTF 2025",
+      "year": 2025,
+      "date": "2025-11-08",
+      "place": 575,
+      "totalTeams": 715,
+      "points": 100,
+      "url": "https://ctftime.org/event/2883"
+    },
+    {
+      "id": 2878,
+      "title": "Infobahn CTF 2025",
+      "year": 2025,
+      "date": "2025-11-07",
+      "place": 127,
+      "totalTeams": 803,
+      "points": 700,
+      "url": "https://ctftime.org/event/2878"
+    },
+    {
+      "id": 2912,
+      "title": "DEADFACE CTF 2025",
+      "year": 2025,
+      "date": "2025-10-25",
+      "place": 393,
+      "totalTeams": 787,
+      "points": 330,
+      "url": "https://ctftime.org/event/2912"
+    },
+    {
+      "id": 2938,
+      "title": "H7CTF 2025",
+      "year": 2025,
+      "date": "2025-10-18",
+      "place": 126,
+      "totalTeams": 452,
+      "points": 6950,
+      "url": "https://ctftime.org/event/2938"
+    },
+    {
+      "id": 2763,
+      "title": "corCTF 2025",
+      "year": 2025,
+      "date": "2025-08-30",
+      "place": 452,
+      "totalTeams": 473,
+      "points": 1,
+      "url": "https://ctftime.org/event/2763"
+    },
+    {
+      "id": 2864,
+      "title": "Full Weak Engineer CTF 2025",
+      "year": 2025,
+      "date": "2025-08-29",
+      "place": 258,
+      "totalTeams": 732,
+      "points": 1041,
+      "url": "https://ctftime.org/event/2864"
+    },
+    {
+      "id": 2683,
+      "title": "SekaiCTF 2025",
+      "year": 2025,
+      "date": "2025-08-16",
+      "place": 885,
+      "totalTeams": 1054,
+      "points": 39,
+      "url": "https://ctftime.org/event/2683"
+    },
+    {
+      "id": 2818,
+      "title": "No Hack No CTF 2025",
+      "year": 2025,
+      "date": "2025-07-05",
+      "place": 226,
+      "totalTeams": 473,
+      "points": 110,
+      "url": "https://ctftime.org/event/2818"
+    },
+    {
+      "id": 2579,
+      "title": "WolvCTF 2025",
+      "year": 2025,
+      "date": "2025-03-21",
+      "place": 287,
+      "totalTeams": 455,
+      "points": 351,
+      "url": "https://ctftime.org/event/2579"
+    },
+    {
+      "id": 2638,
+      "title": "ApoorvCTF 2025",
+      "year": 2025,
+      "date": "2025-02-28",
+      "place": 506,
+      "totalTeams": 774,
+      "points": 100,
+      "url": "https://ctftime.org/event/2638"
+    },
+    {
+      "id": 2654,
+      "title": "TRX CTF 2025",
+      "year": 2025,
+      "date": "2025-02-22",
+      "place": 157,
+      "totalTeams": 550,
+      "points": 100,
+      "url": "https://ctftime.org/event/2654"
+    },
+    {
+      "id": 2503,
+      "title": "IrisCTF 2025",
+      "year": 2025,
+      "date": "2025-01-04",
+      "place": 729,
+      "totalTeams": 1063,
+      "points": 150,
+      "url": "https://ctftime.org/event/2503"
+    },
+    {
+      "id": 2461,
+      "title": "niteCTF 2024",
+      "year": 2024,
+      "date": "2024-12-13",
+      "place": 622,
+      "totalTeams": 1174,
+      "points": 10,
+      "url": "https://ctftime.org/event/2461"
+    },
+    {
+      "id": 2515,
+      "title": "WannaGame Championship 2024",
+      "year": 2024,
+      "date": "2024-12-13",
+      "place": 159,
+      "totalTeams": 311,
+      "points": 100,
+      "url": "https://ctftime.org/event/2515"
+    },
+    {
+      "id": 2497,
+      "title": "IRON CTF 2024",
+      "year": 2024,
+      "date": "2024-10-05",
+      "place": 862,
+      "totalTeams": 1033,
+      "points": 100,
+      "url": "https://ctftime.org/event/2497"
+    }
+  ]
+}
