@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Camera } from "lucide-react";
 import { rankedCompetitions } from "@/data/competitions";
 import { cyberNexus, events, flaggersUnited } from "@/data/community";
+import { HoverPhoto } from "./hover-photo";
 import { PhotoFigure } from "./photo";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./ui";
@@ -57,19 +58,24 @@ export function Community() {
           </Reveal>
 
           <div className="max-md:min-w-0 lg:col-span-7">
-            <h3 className="label">Winning events as a team <span className="normal-case tracking-normal">(photos in the competition section above)</span></h3>
+            <h3 className="label">Winning events as a team <span className="normal-case tracking-normal max-md:hidden">(hover a row with a camera icon to see the photo)</span></h3>
             <ol className="mt-4 border-t border-line">
               {teamWins.map((c) => (
                 <li key={c.event}>
                   <Reveal>
-                    <article className="grid grid-cols-[4.5rem_1fr] items-center gap-5 border-b border-line py-5 max-md:grid-cols-[3.25rem_1fr] max-md:gap-3 max-md:py-3">
+                    <HoverPhoto photo={c.photos?.[0]}>
+                    <article className="grid grid-cols-[4.5rem_1fr] items-center gap-5 border-b border-line py-5 transition-colors hover:bg-surface/60 max-md:grid-cols-[3.25rem_1fr] max-md:gap-3 max-md:py-3">
                       <p className={`font-display text-3xl font-semibold tracking-tight max-md:text-2xl ${c.place === 1 ? "text-accent" : ""}`}>{c.result}</p>
                       <div className="max-md:min-w-0">
-                        <p className="text-lg font-medium leading-snug max-md:text-[15px]">{c.event}</p>
+                        <p className="flex items-center gap-2 text-lg font-medium leading-snug max-md:text-[15px]">
+                          {c.event}
+                          {c.photos?.[0] && <Camera className="size-3.5 shrink-0 text-muted max-md:hidden" aria-label="Has photo" />}
+                        </p>
                         <p className="mt-1 text-sm text-muted max-md:truncate max-md:text-xs">{[c.host, c.date].filter(Boolean).join(" · ")}</p>
                         {c.prize && <p className="mt-1 font-mono text-xs text-accent">{c.prize}</p>}
                       </div>
                     </article>
+                    </HoverPhoto>
                   </Reveal>
                 </li>
               ))}

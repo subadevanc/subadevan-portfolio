@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "data:ctftime": "node scripts/fetch-ctftime.mjs"
+    "data:ctftime": "node scripts/fetch-ctftime.mjs",
+    "data:medium": "node scripts/fetch-medium.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "lucide-react": "^1.66.0",
     "motion": "^14.9.0",
     "next": "16.4.4",

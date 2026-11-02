@@ -26,6 +26,7 @@ const ITEMS: Item[] = [
     group: "Navigate" as const,
     action: { type: "section" as const, id: s.id },
   })),
+  { key: "page-writeups", label: "Write-ups", hint: "/writeups", group: "Pages", action: { type: "page", href: "/writeups" } },
   { key: "page-community", label: "Community page", hint: "/community", group: "Pages", action: { type: "page", href: "/community" } },
   { key: "page-certifications", label: "Certifications page", hint: "/certifications", group: "Pages", action: { type: "page", href: "/certifications" } },
   { key: "terminal", label: "Open terminal", hint: ">_", group: "Actions", action: { type: "terminal" } },

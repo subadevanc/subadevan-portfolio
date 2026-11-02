@@ -77,7 +77,7 @@ export function Timeline() {
                   className={`grid grid-cols-[1fr] sm:grid-cols-[8rem_1fr] ${!showAll && idx >= 10 ? "max-md:hidden" : ""}`}
                 >
                   <p className="label pt-6 sm:pr-6 sm:text-right">{m.when}</p>
-                  <div className="relative border-l border-line pb-1 pl-7">
+                  <div className="tl-step relative border-l border-line pb-1 pl-7">
                     <span
                       aria-hidden
                       className={`absolute -left-[5px] top-[1.9rem] size-[9px] rounded-full border transition-colors ${

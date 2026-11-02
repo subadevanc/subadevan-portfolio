@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Plus } from "lucide-react";
 import { caseStudies, disclosures, experience, type CaseStudy } from "@/data/research";
@@ -215,7 +216,7 @@ export function ResearchLab() {
         <Reveal className="min-w-0 lg:col-span-7">
           <div id="disclosures">
             <h3 className="label">Disclosure ledger</h3>
-            <p className="mt-3 max-w-lg text-muted">More responsible disclosures, with public acknowledgements and screenshots where they exist.</p>
+            <p className="mt-3 max-w-lg text-muted">More responsible disclosures, with public acknowledgements and screenshots where they exist. The stories behind some of them are in the <Link href="/writeups" className="link-draw text-fg">write-ups</Link>.</p>
             <ol className="mt-6 border-t border-line">
               {disclosures.map((d) => (
                 <li key={d.org} className="grid gap-4 border-b border-line py-6 sm:grid-cols-[1fr_auto]">

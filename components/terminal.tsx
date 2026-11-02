@@ -6,6 +6,9 @@ import { SquareTerminal, X } from "lucide-react";
 import { profile } from "@/data/profile";
 import { caseStudies, disclosures } from "@/data/research";
 import { wins } from "@/data/competitions";
+import ctftime from "@/data/ctftime.json";
+import medium from "@/data/medium.json";
+import { sortedWriteups } from "@/data/writeups";
 
 type Kind = "cmd" | "out" | "err" | "ok" | "flag" | "sys";
 type Line = { id: number; kind: Kind; text: string; prompt?: string };
@@ -52,12 +55,24 @@ async function sha256(text: string) {
   return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+const BANNER = [
+  "┌─────────────────────────────────────┐",
+  "│  ▓▓ subadevan@portfolio             │",
+  "│  offensive security · web & api     │",
+  "│  flaggers united · chennai, in      │",
+  "└─────────────────────────────────────┘",
+];
+
 const HELP = [
   "available commands:",
   "  whoami         who is this",
   "  about          the short version",
   "  achievements   bounties and podiums",
   "  contact        how to reach me",
+  "  bounties       paid bounties and disclosures",
+  "  wins           competition wins",
+  "  ctf            flaggers united on ctftime",
+  "  writeups       write-ups and medium posts",
   "  ls             list files",
   "  clear          clear the screen",
   "  exit           close the terminal",
@@ -86,6 +101,32 @@ function staticOutput(cmd: string): string[] | null {
         ...caseStudies.map((c) => `  [bounty] ${c.org.padEnd(10)} ${c.title} · ${c.recognition}`),
         `  [disclosure] ${disclosures.map((d) => d.org).join(", ")}`,
         `  [wins ×${wins.length}] ${wins.map((c) => `${c.event} (${c.result})`).join(", ")}`,
+      ];
+    case "bounties":
+      return [
+        ...caseStudies.map((c) => `  ${c.org.padEnd(10)} ${c.recognition.padEnd(22)} ${c.date ?? ""}`),
+        ...disclosures.map((d) => `  ${d.org.slice(0, 10).padEnd(10)} ${d.outcome.padEnd(22)} ${d.date ?? ""}`),
+      ];
+    case "wins":
+      return [`  ${wins.length} top-3 finishes:`, ...wins.map((c) => `  ${c.result.padEnd(4)} ${c.event}${c.date ? ` · ${c.date}` : ""}`)];
+    case "ctf": {
+      const r = ctftime.rating.at(-1);
+      const best = [...ctftime.events].sort((a, b) => a.place / a.totalTeams - b.place / b.totalTeams)[0];
+      return [
+        `  ${ctftime.team.name} · ctftime.org/team/${ctftime.team.id}`,
+        r ? `  ${r.year}: #${r.ratingPlace} global · #${r.countryPlace} india · ${r.points} pts` : "  no rated season yet",
+        `  events played: ${ctftime.events.length} · best: #${best.place}/${best.totalTeams} ${best.title}`,
+        "  latest:",
+        ...ctftime.events.slice(0, 5).map((e) => `    ${e.date}  #${String(e.place).padEnd(4)} ${e.title}`),
+        `  snapshot ${ctftime.fetchedAt.slice(0, 10)}`,
+      ];
+    }
+    case "writeups":
+      return [
+        ...sortedWriteups.map((w) => `  ${w.date}  ${w.title}\n              → /writeups/${w.slug}`),
+        ...medium.articles.map((a) => `  ${a.date}  ${a.title}\n              → medium`),
+        "",
+        "→ subadevan.tech/writeups",
       ];
     case "contact":
     case "cat contact.txt":
@@ -135,7 +176,10 @@ export function Terminal({ open, onOpen, onClose }: { open: boolean; onOpen: () 
   useEffect(() => {
     if (open) {
       returnFocus.current = document.activeElement as HTMLElement | null;
-      if (lines.length === 0) print("sys", [`${profile.name.toLowerCase()}@portfolio · type "help" to begin.`]);
+      if (lines.length === 0) {
+        print("out", BANNER);
+        timers.current.push(window.setTimeout(() => push("sys", 'type "help" to begin.'), BANNER.length * 28 + 40));
+      }
       requestAnimationFrame(() => inputRef.current?.focus());
     } else if (returnFocus.current) {
       (returnFocus.current.isConnected ? returnFocus.current : launcherRef.current)?.focus();

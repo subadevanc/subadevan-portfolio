@@ -1,29 +1,75 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import ctftime from "@/data/ctftime.json";
+import { wins } from "@/data/competitions";
+import { caseStudies } from "@/data/research";
 import { certGroups } from "@/data/certifications";
-import { profile } from "@/data/profile";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./ui";
 
-function Barcode({ seed }: { seed: string }) {
-  const bars = Array.from(seed + seed, (ch, i) => ({ x: i * 7, w: (ch.charCodeAt(0) % 3) + 1 }));
+type Tile = { label: string; value: ReactNode; detail: string; href?: string; wide?: boolean };
+
+function GlanceGrid() {
+  const latest = ctftime.rating.at(-1);
+  const featured = caseStudies.find((c) => c.featured) ?? caseStudies[0];
+  const tiles: Tile[] = [
+    {
+      label: "Now",
+      value: (
+        <span className="flex items-center gap-2">
+          <span className="pulse-dot size-1.5 rounded-full bg-accent" aria-hidden />
+          Researching
+        </span>
+      ),
+      detail: "Chennai, IN",
+      wide: true,
+    },
+    { label: "Latest bounty", value: featured.recognition.split(" ")[0], detail: `${featured.org} · ${featured.date ?? ""}`, href: "#research" },
+    { label: "Wins", value: String(wins.length), detail: "top-3 finishes", href: "#competition" },
+    {
+      label: "CTFtime",
+      value: latest?.ratingPlace ? `#${latest.ratingPlace}` : "—",
+      detail: `global · #${latest?.countryPlace ?? "—"} India`,
+      href: "#operations",
+    },
+    { label: "Studies", value: "B.E. CSE", detail: "Cybersecurity · JCE · 2027" },
+    { label: "Crews", value: "Flaggers United", detail: "Co-founder · Cyber Nexus Club", href: "#community", wide: true },
+  ];
+
   return (
-    <svg viewBox={`0 0 ${bars.length * 7} 28`} className="h-7 w-full" aria-hidden preserveAspectRatio="none">
-      {bars.map((b, i) => (
-        <rect key={i} x={b.x} y={0} width={b.w * 1.6} height={28} fill="currentColor" />
-      ))}
-    </svg>
+    <div className="grid grid-cols-2 gap-px border border-line bg-line" aria-label="At a glance">
+      {tiles.map((t) => {
+        const body = (
+          <>
+            <span className="label text-[10px]">{t.label}</span>
+            <span className="mt-2 block font-display text-2xl font-medium tracking-tight">{t.value}</span>
+            <span className="mt-1 block font-mono text-[11px] text-muted">{t.detail}</span>
+            {t.href && (
+              <ArrowUpRight
+                className="absolute right-3 top-3 size-3.5 text-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                aria-hidden
+              />
+            )}
+          </>
+        );
+        const cls = `group relative block bg-surface p-4 transition-colors ${t.wide ? "col-span-2" : ""} ${
+          t.href ? "hover:bg-bg focus-visible:bg-bg" : ""
+        }`;
+        return t.href ? (
+          <a key={t.label} href={t.href} className={cls}>
+            {body}
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 group-hover:scale-x-100" />
+          </a>
+        ) : (
+          <div key={t.label} className={cls}>
+            {body}
+          </div>
+        );
+      })}
+    </div>
   );
 }
-
-const FILE: [string, string][] = [
-  ["Subject", profile.name],
-  ["Focus", "Web & API security · VAPT"],
-  ["Base", profile.location],
-  ["Studies", "B.E. CSE (Cybersecurity), JCE · 2027"],
-  ["Crews", "Flaggers United · CyberNexus Club"],
-  ["Speaks", profile.languages.join(", ")],
-];
 
 export function About() {
   return (
@@ -33,28 +79,9 @@ export function About() {
           <SectionHeading id="about" kicker="About" title={<>Beyond the terminal.</>} />
 
           <Reveal delay={0.1} className="mt-12 lg:sticky lg:top-28">
-            <figure className="corner-frame border border-line bg-surface p-6 font-mono text-sm" aria-label="Profile card">
-              <span className="label text-[11px]">At a glance</span>
-              <dl className="mt-5 divide-y divide-line border-y border-line">
-                {FILE.map(([k, v]) => (
-                  <div key={k} className="grid grid-cols-[6rem_1fr] gap-4 py-2.5">
-                    <dt className="text-muted">{k}</dt>
-                    <dd>{v}</dd>
-                  </div>
-                ))}
-                <div className="grid grid-cols-[6rem_1fr] gap-4 py-2.5">
-                  <dt className="text-muted">Clearance</dt>
-                  <dd>
-                    <span className="border border-accent px-1.5 py-0.5 text-[11px] uppercase tracking-widest text-accent">
-                      Public
-                    </span>
-                  </dd>
-                </div>
-              </dl>
-              <div className="mt-6 text-muted max-md:hidden">
-                <Barcode seed="SUBADEVAN-C" />
-              </div>
-            </figure>
+            <div className="corner-frame">
+              <GlanceGrid />
+            </div>
           </Reveal>
         </div>
 

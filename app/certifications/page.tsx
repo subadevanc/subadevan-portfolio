@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { breadcrumbJsonLd, jsonLdString } from "@/lib/seo";
 import { certGroups } from "@/data/certifications";
 import { Footer } from "@/components/footer";
 import { PageHeader, SubHeading } from "@/components/page-header";
@@ -54,6 +55,10 @@ export default function CertificationsPage() {
         </div>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumbJsonLd([{ name: "Certifications", path: "/certifications" }])) }}
+      />
     </>
   );
 }

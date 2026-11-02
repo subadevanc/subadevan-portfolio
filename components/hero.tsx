@@ -62,13 +62,13 @@ function PhoneHero({ stats }: { stats: HeroStat[] }) {
       </div>
 
       <div className="container-x relative -mt-16 pb-8">
-        <h1 className="font-display text-[clamp(2.5rem,13.5vw,3.6rem)] font-semibold leading-none tracking-[-0.05em] whitespace-nowrap">
+        <p role="heading" aria-level={1} className="font-display text-[clamp(2.5rem,13.5vw,3.6rem)] font-semibold leading-none tracking-[-0.05em] whitespace-nowrap">
           <span className="block overflow-hidden pb-[0.08em]">
             <span className="rise" style={delay(300)}>
               Subadevan C<span className="text-accent">.</span>
             </span>
           </span>
-        </h1>
+        </p>
         <p className="fade-up mt-2 font-mono text-xs text-muted" style={delay(450)}>
           <span className="text-fg">{profile.title}</span>
           <span className="mx-2 text-accent" aria-hidden>

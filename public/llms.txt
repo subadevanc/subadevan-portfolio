@@ -1,0 +1,32 @@
+# Subadevan C
+
+> Offensive security researcher (web & API security) and final-year B.E. Computer Science and Engineering (Cybersecurity) student at Jerusalem College of Engineering, Chennai, India. Co-founder of the CTF team Flaggers United. Portfolio: https://subadevan.tech
+
+## Security research
+- Vercel (Flags SDK, open source): stateful regular-expression flaw that leaked state across evaluations. $400 bounty, Sep 2026.
+- Instacart: API security vulnerability. $250 bounty, 2026.
+- Sony: DOM-based XSS and broken access control via its VDP on HackerOne. Both remediated, 2026.
+- ZKTeco: authentication bypass. INR 18,000 reward.
+- Responsible disclosures and halls of fame: JPMorgan Chase, World Health Organization, UNESCO, Porsche.
+
+## Competitions
+- 21 top-3 competition finishes across CTF, Boot2Root and bug bounty events, including 1st at the ISACA Trivandrum Chapter CTF 2026 (team, ₹25,000).
+- Flaggers United on CTFtime: https://ctftime.org/team/356365
+
+## Experience and community
+- DevSecOps Intern, TechForce Services (Jun–Jul 2025): least-privilege IAM, network hardening, Terraform and CI/CD on AWS and GCP.
+- President, Cyber Nexus Club, JCE (Aug 2025 – Aug 2026); organised DOOMS CTF 2026 and SPYIREX CTF 2026.
+
+## Pages
+- [Home](https://subadevan.tech/): research case files, competition record, CTFtime operations room, timeline, community
+- [Write-ups](https://subadevan.tech/writeups): CTF and disclosure write-ups
+- [Community](https://subadevan.tech/community): Flaggers United, Cyber Nexus Club, events
+- [Certifications](https://subadevan.tech/certifications)
+- [Résumé (PDF)](https://subadevan.tech/Subadevan_C_Resume.pdf)
+
+## Contact
+- Email: subadevanc@gmail.com
+- GitHub: https://github.com/subadevanc
+- LinkedIn: https://www.linkedin.com/in/subadevan/
+- HackerOne: https://hackerone.com/subadevan
+- Medium (write-ups): https://medium.com/@subadevanc

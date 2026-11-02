@@ -25,6 +25,7 @@ export const socials: Social[] = [
   { label: "LinkedIn", handle: "in/subadevan", href: "https://www.linkedin.com/in/subadevan/" },
   { label: "X", handle: "@subadevanc", href: "https://x.com/subadevanc" },
   { label: "HackerOne", handle: "subadevan", href: "https://hackerone.com/subadevan" },
+  { label: "Medium", handle: "@subadevanc", href: "https://medium.com/@subadevanc" },
   { label: "TryHackMe", handle: "subadevan", href: "https://tryhackme.com/p/subadevan" },
   { label: "CTFtime", handle: "Flaggers United", href: "https://ctftime.org/team/356365" },
 ];

@@ -13,6 +13,7 @@ const noopSubscribe = () => () => {};
 const LINKS = [
   { key: "research", href: "/#research", label: "Research", page: null },
   { key: "competition", href: "/#competition", label: "Competition", page: null },
+  { key: "writeups", href: "/writeups", label: "Write-ups", page: "/writeups" },
   { key: "community", href: "/community", label: "Community", page: "/community" },
   { key: "contact", href: "/#contact", label: "Contact", page: null },
 ] as const;
@@ -56,6 +57,7 @@ export function Nav() {
 
   return (
     <header
+      style={{ viewTransitionName: "site-header" }}
       className={`fixed inset-x-0 top-0 z-40 border-b transition-colors duration-300 ${
         scrolled ? "border-line bg-bg/85 backdrop-blur-md" : "border-transparent"
       }`}

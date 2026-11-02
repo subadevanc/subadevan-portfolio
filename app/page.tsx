@@ -1,7 +1,8 @@
 import { cyberNexus } from "@/data/community";
 import { wins } from "@/data/competitions";
-import { profile, socials } from "@/data/profile";
+import { profile } from "@/data/profile";
 import { caseStudies, disclosures } from "@/data/research";
+import { jsonLdString, PERSON_ID, personJsonLd, WEBSITE_ID, websiteJsonLd } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 import { About } from "@/components/about";
 import { Community } from "@/components/community";
@@ -29,16 +30,21 @@ export default function Home() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: profile.name,
-    jobTitle: profile.title,
-    url: SITE_URL,
-    email: `mailto:${profile.email}`,
-    address: { "@type": "PostalAddress", addressLocality: "Chennai", addressCountry: "IN" },
-    alumniOf: { "@type": "CollegeOrUniversity", name: profile.education.school },
-    memberOf: { "@type": "Organization", name: "Flaggers United", url: "https://ctftime.org/team/356365" },
-    sameAs: socials.map((s) => s.href),
-    knowsAbout: ["Web application security", "API security", "Penetration testing", "Capture the Flag"],
+    "@graph": [
+      websiteJsonLd(),
+      {
+        "@type": "ProfilePage",
+        "@id": `${SITE_URL}/#profile`,
+        url: SITE_URL,
+        name: `${profile.name} — ${profile.title}`,
+        isPartOf: { "@id": WEBSITE_ID },
+        mainEntity: { "@id": PERSON_ID },
+        dateCreated: "2026-11-02T00:00:00+05:30",
+        dateModified: "2026-11-03T00:00:00+05:30",
+        inLanguage: "en",
+      },
+      personJsonLd(),
+    ],
   };
 
   return (
@@ -56,7 +62,7 @@ export default function Home() {
       <Footer />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
     </>
   );

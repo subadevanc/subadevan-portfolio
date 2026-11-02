@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { breadcrumbJsonLd, jsonLdString } from "@/lib/seo";
 import Image from "next/image";
 import ctftime from "@/data/ctftime.json";
 import roster from "@/data/roster.json";
@@ -11,7 +12,7 @@ import { Reveal } from "@/components/reveal";
 import { ExternalLink } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Community",
+  title: "Community: Flaggers United & Cyber Nexus Club",
   description:
     "Subadevan C's community work: co-founder of Flaggers United, President of the CyberNexus Club, organizer of DOOMS CTF 2026, and the events he attends.",
   alternates: { canonical: "/community" },
@@ -185,6 +186,10 @@ export default function CommunityPage() {
         </section>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumbJsonLd([{ name: "Community", path: "/community" }])) }}
+      />
     </>
   );
 }

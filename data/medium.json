@@ -1,0 +1,58 @@
+{
+  "source": "https://medium.com/@subadevanc",
+  "fetchedAt": "2026-11-02T19:30:40.098Z",
+  "articles": [
+    {
+      "title": "How I Found a DOM XSS on a Major Brand’s Community Site (and Got Swag for It)",
+      "url": "https://medium.com/@subadevanc/how-i-found-a-dom-xss-on-a-major-brands-community-site-and-got-swag-for-it-958cb5d1d7d9",
+      "date": "2026-10-13",
+      "tags": [
+        "cybersecurity",
+        "hacker",
+        "bug-bounty",
+        "xs"
+      ],
+      "summary": "So this is my second writeup. First one was about my first paid bounty. This one is a bug I found around the same time, on a way bigger name. It didn’t…",
+      "minutes": 3
+    },
+    {
+      "title": "KPMG CTF 2026 Web Challenges: The Dragon Warrior Solution",
+      "url": "https://medium.com/@subadevanc/kpmg-ctf-2026-web-challenges-the-dragon-warrior-solution-4780b645541f",
+      "date": "2026-10-13",
+      "tags": [
+        "cybersecurity",
+        "bugbounty-writeup",
+        "hiring",
+        "kpmg"
+      ],
+      "summary": "A comment buried in the favicon, an “encrypted” ID that wasn’t, and a JWT I got to sign myself. The Dragon Warrior was a 20-point web challenge — a Kung-Fu-Panda-themed SPA sitting…",
+      "minutes": 4
+    },
+    {
+      "title": "From Hall of Fame to My First $250: How a VDP Hunter Finally Got Paid",
+      "url": "https://medium.com/@subadevanc/from-hall-of-fame-to-my-first-250-how-a-vdp-hunter-finally-got-paid-24152c7fac0a",
+      "date": "2026-10-13",
+      "tags": [
+        "cybersecurity",
+        "beginner",
+        "ethical-hacking",
+        "infosec"
+      ],
+      "summary": "I’ve been around security stuff since 2022. But for most of that time I was just curious, not skilled. And every time someone brought up bug bounty, I’d think “nah, that’s too…",
+      "minutes": 8
+    },
+    {
+      "title": "KPMG CTF 2026 Web Challenges: Onboardx Solution",
+      "url": "https://medium.com/@subadevanc/kpmg-ctf-2026-web-challenges-onboardx-solution-1eeea31d3b33",
+      "date": "2026-10-12",
+      "tags": [
+        "hiringctf",
+        "kpmg",
+        "bug-bounty",
+        "ctf"
+      ],
+      "summary": "Mass assignment, a JWT key-confusion forge, and an old ImageMagick bug — stitched together into a root shell. Onboardx was a 30-point web challenge. It’s a self-service HR portal — you sign…",
+      "minutes": 5
+    }
+  ]
+}
