@@ -1,6 +1,6 @@
 {
   "source": "https://ctftime.org/team/356365",
-  "fetchedAt": "2026-11-02T13:29:41.064Z",
+  "fetchedAt": "2026-11-09T11:59:16.046Z",
   "team": {
     "id": 356365,
     "name": "Flaggers United",
@@ -17,12 +17,22 @@
   "rating": [
     {
       "year": 2026,
-      "ratingPlace": 319,
+      "ratingPlace": 323,
       "countryPlace": 32,
       "points": 214.54
     }
   ],
   "events": [
+    {
+      "id": 3460,
+      "title": "HI Cyber Con 2026 CTF",
+      "year": 2026,
+      "date": "2026-10-30",
+      "place": 500,
+      "totalTeams": 1118,
+      "points": 770,
+      "url": "https://ctftime.org/event/3460"
+    },
     {
       "id": 3207,
       "title": "Hack.lu CTF 2026",
